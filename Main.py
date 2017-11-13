@@ -32,7 +32,9 @@ print(turnover_Summary.mean())
 # Correlation Matrix
 corr = df.corr()
 corr = (corr)
-corr1=sns.heatmap(corr, xticklabels=corr.columns.values, yticklabels=corr.columns.values)
+ax= plt.axes()
+corr1=sns.heatmap(corr, xticklabels=corr.columns.values, yticklabels=corr.columns.values, ax=ax)
+ax.set_title('Correlation Matrix & Heatmap')
 print(corr)
 
 emp_population = df['satisfaction_level'][df['left'] == 0].mean()
