@@ -15,6 +15,9 @@ from sklearn.cluster import KMeans
 
 # Exploring the data - EDA
 df = pd.read_csv('HR_comma_sep.csv', index_col=None)
+
+df = df.rename(columns={'sales' : 'department'})
+
 a=df.head()
 print(df.isnull().any())
 print(df.corr())
@@ -45,7 +48,7 @@ print("****************")
 #############
 
 f, ax = plt.subplots(figsize=(15, 5))
-sns.countplot(y="sales", hue='left', data=df).set_title('Employee Department Turnover Distribution');
+sns.countplot(y="department", hue='left', data=df).set_title('Employee Department Turnover Distribution');
 
 f, ax = plt.subplots(figsize=(15, 4))
 sns.countplot(y="salary", hue='left', data=df).set_title('Employee Salary Turnover Distribution');
@@ -90,7 +93,7 @@ plt.style.use('fivethirtyeight')
 plt.rcParams['figure.figsize'] = (12,6)
 
 # Convert these variables into categorical variables
-df["sales"] = df["sales"].astype('category').cat.codes
+df["department"] = df["department"].astype('category').cat.codes
 df["salary"] = df["salary"].astype('category').cat.codes
 
 # Create train and test splits
