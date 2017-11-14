@@ -14,6 +14,9 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import classification_report, roc_curve, auc, precision_recall_curve
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix
 
 
 def prediction(actualResult, predictedData, algorithm):
@@ -42,10 +45,12 @@ np.save('column_names.npy', column_names)
 
 le = LabelEncoder()
 train = df['department'].unique().tolist()
+print (train)
 test = df['department']
 df['department'] = le.fit(train).transform(test)
 # salary column...
 train = df['salary'].unique().tolist()
+print (train)
 test = df['salary']
 df['salary'] = le.fit(train).transform(test)
 
@@ -61,6 +66,7 @@ features = scaled_features[col_names]
 scaler = StandardScaler().fit(features.values)
 features = scaler.transform(features.values)
 scaled_features[col_names] = features
+
 '''
 print (scaled_features.values)
 print ("Dataframe")
@@ -102,12 +108,56 @@ clf = MLPClassifier(solver='sgd', hidden_layer_sizes=(100,), random_state=1,acti
 clf.fit(x,y)
 predictedData=list(clf.predict(testFeature))
 prediction(actualResult, predictedData, "Neural Network Algorithm")
+fpr, tpr, thresholds = roc_curve(actualResult, predictedData)
+precision, recall, thresholds = precision_recall_curve(actualResult, predictedData)
+roc_auc = auc(fpr, tpr)
+#print (roc_auc)
+plt.title('Receiver Operating Characteristic for Neural Network')
+plt.plot(fpr, tpr, 'b', label='AUC = %0.2f'% roc_auc)
+plt.legend(loc='lower right')
+plt.plot([0,1],[0,1],'r--')
+plt.xlim([0.,1.])
+plt.ylim([0.,1.])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+plt.show()
+
+plt.clf()
+plt.title('Precision Recall Curve for Neural Network')
+plt.plot(recall, precision, 'b')
+plt.xlim([0.,1.])
+plt.ylim([0.,1.])
+plt.ylabel('Precision')
+plt.xlabel('Recall')
+plt.show()
 #clf = tree.DecisionTreeClassifier()
 
 clf = KNeighborsClassifier(n_neighbors=5, algorithm='auto')
 clf.fit(x,y)
 predictedData=list(clf.predict(testFeature))
 prediction(actualResult, predictedData, "KNearestNeighbors Algorithm")
+fpr, tpr, thresholds = roc_curve(actualResult, predictedData)
+precision, recall, thresholds = precision_recall_curve(actualResult, predictedData)
+roc_auc = auc(fpr, tpr)
+#print (roc_auc)
+plt.title('Receiver Operating Characteristic for NearestNeighbors')
+plt.plot(fpr, tpr, 'b', label='AUC = %0.2f'% roc_auc)
+plt.legend(loc='lower right')
+plt.plot([0,1],[0,1],'r--')
+plt.xlim([0.,1.])
+plt.ylim([0.,1.])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+plt.show()
+
+plt.clf()
+plt.title('Precision Recall Curve for NearestNeighbors')
+plt.plot(recall, precision, 'b')
+plt.xlim([0.,1.])
+plt.ylim([0.,1.])
+plt.ylabel('Precision')
+plt.xlabel('Recall')
+plt.show()
 
 
 clf =  AdaBoostClassifier(DecisionTreeClassifier(max_depth=5),n_estimators=6, learning_rate=0.01,algorithm="SAMME")
@@ -117,6 +167,44 @@ prediction(actualResult, predictedData, "AdaBoostClassifier")
 #scores = cross_val_score(clf, y, x, cv=5)
 #print ("Cross validation with 5 folds ")
 #print (scores)
+
+print(classification_report(actualResult, predictedData))
+fpr, tpr, thresholds = roc_curve(actualResult, predictedData)
+cm = confusion_matrix(predictedData,actualResult )
+print("Confusion Matrix")
+#print(cm)
+
+plt.matshow(cm)
+plt.title('Confusion matrix')
+plt.colorbar()
+plt.xlabel('True label')
+plt.ylabel('Predicted label')
+plt.show()
+
+#print (fpr, tpr, thresholds)
+precision, recall, thresholds = precision_recall_curve(actualResult, predictedData)
+roc_auc = auc(fpr, tpr)
+#print (roc_auc)
+plt.title('Receiver Operating Characteristic for AdaBoost')
+plt.plot(fpr, tpr, 'b', label='AUC = %0.2f'% roc_auc)
+plt.legend(loc='lower right')
+plt.plot([0,1],[0,1],'r--')
+plt.xlim([0.,1.])
+plt.ylim([0.,1.])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+plt.show()
+#plt.savefig("ROC.png")
+
+plt.clf()
+plt.title('Precision Recall Curve for AdaBoost')
+plt.plot(recall, precision, 'b')
+plt.xlim([0.,1.])
+plt.ylim([0.,1.])
+plt.ylabel('Precision')
+plt.xlabel('Recall')
+plt.show()
+#plt.savefig("precision-recall.png")
 
 
 

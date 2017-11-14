@@ -1,0 +1,16 @@
+//Plot 1 
+
+<div>
+    <a href="https://plot.ly/~aish.gunashekar/7/?share_key=3VyUVCqXdRM7yRf86Jr1zD" target="_blank" title="basic histogram" style="display: block; text-align: center;"><img src="https://plot.ly/~aish.gunashekar/7.png?share_key=3VyUVCqXdRM7yRf86Jr1zD" alt="basic histogram" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="aish.gunashekar:7" sharekey-plotly="3VyUVCqXdRM7yRf86Jr1zD" src="https://plot.ly/embed.js" async></script>
+</div>
+
+
+//Plot 2 
+
+<div>
+    <a href="https://plot.ly/~aish.gunashekar/5/?share_key=cmyJhBVw4Kh7nQBLzGhvZA" target="_blank" title="salary-department-satisfaction-online" style="display: block; text-align: center;"><img src="https://plot.ly/~aish.gunashekar/5.png?share_key=cmyJhBVw4Kh7nQBLzGhvZA" alt="salary-department-satisfaction-online" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="aish.gunashekar:5" sharekey-plotly="cmyJhBVw4Kh7nQBLzGhvZA" src="https://plot.ly/embed.js" async></script>
+</div>
+
+
