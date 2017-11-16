@@ -169,17 +169,4 @@ trace2 = Pie(labels=labels2, values=values2)
 
 py.plot([trace2], filename='dept_pie_chart')
 
-#plot5
-satis_list = []
-satis_list = satList1 + satList2 +satList3
-labels3 = satis_list
-grouped = salary_dept.groupby('satisfaction_level').count()
-
-values3 = [1227,787,767,739,630,858,902,4140,2229,2720]
-
-trace3 = Pie(labels=labels3, values=values3)
-
-#fig_comp3 = Figure( data=trace1, layout = layout3)
-
-py.plot([trace2], filename='dept_pie_chart')
 
