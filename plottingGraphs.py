@@ -144,5 +144,42 @@ fig_comp2 = Figure( data=data3, layout = layout2)
 py.plot(fig_comp2, filename='basic histogram')
 
 
-
 #plot3 - Histogram Salary Distribution
+
+labels1 = ['low','medium','high']
+salary_dept.groupby('salary').count()
+values1 = [7316,6446,1237]
+
+trace1 = Pie(labels=labels1, values=values1)
+
+#fig_comp3 = Figure( data=trace1, layout = layout3)
+
+py.plot([trace1], filename='salary_pie_chart')
+
+#plot4 - Department strength distribution
+
+labels2 = ['IT','RandD','accounting','hr','management','marketing','product_mg','sales','support','technical']
+salary_dept.groupby('department').count()
+
+values2 = [1227,787,767,739,630,858,902,4140,2229,2720]
+
+trace2 = Pie(labels=labels2, values=values2)
+
+#fig_comp3 = Figure( data=trace1, layout = layout3)
+
+py.plot([trace2], filename='dept_pie_chart')
+
+#plot5
+satis_list = []
+satis_list = satList1 + satList2 +satList3
+labels3 = satis_list
+grouped = salary_dept.groupby('satisfaction_level').count()
+
+values3 = [1227,787,767,739,630,858,902,4140,2229,2720]
+
+trace3 = Pie(labels=labels3, values=values3)
+
+#fig_comp3 = Figure( data=trace1, layout = layout3)
+
+py.plot([trace2], filename='dept_pie_chart')
+
