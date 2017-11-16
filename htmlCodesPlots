@@ -1,5 +1,8 @@
 //Plot 1 
 
+Caption - A histogram representing the prediction score of the three different classifiers; K Nearest Neighbours, 
+Ada Boost and Neural Networks. 
+
 <div>
     <a href="https://plot.ly/~aish.gunashekar/7/?share_key=3VyUVCqXdRM7yRf86Jr1zD" target="_blank" title="basic histogram" style="display: block; text-align: center;"><img src="https://plot.ly/~aish.gunashekar/7.png?share_key=3VyUVCqXdRM7yRf86Jr1zD" alt="basic histogram" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="aish.gunashekar:7" sharekey-plotly="3VyUVCqXdRM7yRf86Jr1zD" src="https://plot.ly/embed.js" async></script>
@@ -7,6 +10,10 @@
 
 
 //Plot 2 
+
+Caption - This plot describes the satisfaction level of the employees for all combinations of Salaries(LOW, MEDIUM, HIGH) 
+and Departments (IT, RandD, Accounting, HR,Management, Marketing, Product_mg, Sales, Support, Technical) on a HEATMAP for 
+the Satisfaction Level.
 
 <div>
     <a href="https://plot.ly/~aish.gunashekar/5/?share_key=cmyJhBVw4Kh7nQBLzGhvZA" target="_blank" title="salary-department-satisfaction-online" style="display: block; text-align: center;"><img src="https://plot.ly/~aish.gunashekar/5.png?share_key=cmyJhBVw4Kh7nQBLzGhvZA" alt="salary-department-satisfaction-online" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
@@ -16,12 +23,16 @@
 
 //Plot 3
 
+Caption - A pie chart showing the Salary Distribution for all the employees categorized as LOW, MEDIUM and HIGH. 
+
 <div>
     <a href="https://plot.ly/~aish.gunashekar/9/?share_key=1FMFpRlLAuSpqEWonxMfKv" target="_blank" title="salary_pie_chart" style="display: block; text-align: center;"><img src="https://plot.ly/~aish.gunashekar/9.png?share_key=1FMFpRlLAuSpqEWonxMfKv" alt="salary_pie_chart" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="aish.gunashekar:9" sharekey-plotly="1FMFpRlLAuSpqEWonxMfKv" src="https://plot.ly/embed.js" async></script>
 </div>
 
 //Plot 4
+
+Caption - A pie chart showing the strength of each Department. 
 
 <div>
     <a href="https://plot.ly/~aish.gunashekar/11/?share_key=RKpnHlNCuJAvWWwoGq5qJX" target="_blank" title="dept_pie_chart" style="display: block; text-align: center;"><img src="https://plot.ly/~aish.gunashekar/11.png?share_key=RKpnHlNCuJAvWWwoGq5qJX" alt="dept_pie_chart" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
